@@ -17,7 +17,7 @@ function App() {
       <Router>
         <Header />
 
-        <Container maxWidth="md" sx={{ mt: 5 }}>
+        <Container maxWidth="sm" sx={{ mt: 5 }}>
           <Routes>
             <Route path="/add-user" element={<AddUser />} />
           </Routes>

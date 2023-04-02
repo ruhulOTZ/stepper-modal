@@ -195,9 +195,18 @@ const AddUser = () => {
         </>
       ) : (
         <>
-          <Box sx={{ minHeight: "100px", padding: 5 }}>{stepperContent()}</Box>
+          <Box sx={{ minHeight: "100px", padding: "30px 0 10px" }}>
+            {stepperContent()}
+          </Box>
 
-          <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "flex-end",
+              pt: 2,
+            }}
+          >
             <Button
               color="inherit"
               disabled={activeStep === 0}
@@ -207,7 +216,7 @@ const AddUser = () => {
             >
               Back
             </Button>
-            <Box sx={{ flex: "1 1 auto" }} />
+            {/* <Box sx={{ flex: "1 1 auto" }} /> */}
 
             <Button
               type={formSubmitStep && "submit"}
