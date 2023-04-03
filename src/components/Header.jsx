@@ -1,21 +1,20 @@
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import Menu from "@mui/material/Menu";
-import MenuIcon from "@mui/icons-material/Menu";
-import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
-import Tooltip from "@mui/material/Tooltip";
-import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
+import MenuIcon from "@mui/icons-material/Menu";
+import { styled } from "@mui/material";
+import AppBar from "@mui/material/AppBar";
+import Avatar from "@mui/material/Avatar";
+import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
+import IconButton from "@mui/material/IconButton";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+import Toolbar from "@mui/material/Toolbar";
+import Tooltip from "@mui/material/Tooltip";
+import Typography from "@mui/material/Typography";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { styled } from "@mui/material";
 
-const pages = ["Products", "Pricing", "Blog", "Add User"];
+const pages = ["Home", "Products", "Add User"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 const Header = () => {
@@ -130,7 +129,13 @@ const Header = () => {
           </Typography>
 
           <Box
-            sx={{ flexGrow: 1, display: { xs: "none", md: "flex" }, gap: 3 }}
+            sx={{
+              flexGrow: 1,
+              display: { xs: "none", md: "flex" },
+              justifyContent: "flex-end",
+              gap: 3,
+              mr: 3,
+            }}
           >
             {pages.map((page) => (
               <StyledRouterLink
@@ -139,7 +144,6 @@ const Header = () => {
                 style={{ my: 2, color: "white", display: "block" }}
                 to={`/${createNavUrl(page)}`}
               >
-                {/* <a href={`/${page}`}>{page}</a> */}
                 {page}
               </StyledRouterLink>
             ))}

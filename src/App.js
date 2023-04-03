@@ -4,6 +4,7 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import AddUser from "./components/page/AddUser";
 import Home from "./components/page/Home";
+import NotFound from "./components/page/NotFound";
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/add-user" element={<AddUser />} />
-          <Route path="*" element={<AddUser />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
 
         <Footer />
