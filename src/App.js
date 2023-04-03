@@ -1,9 +1,9 @@
-import { Box, Container } from "@mui/material";
+import { Box } from "@mui/material";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import "./App.css";
-import AddUser from "./components/AddUser";
-import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Header from "./components/Header";
+import AddUser from "./components/page/AddUser";
+import Home from "./components/page/Home";
 
 function App() {
   return (
@@ -17,11 +17,12 @@ function App() {
       <Router>
         <Header />
 
-        <Container maxWidth="sm" sx={{ mt: 5 }}>
-          <Routes>
-            <Route path="/add-user" element={<AddUser />} />
-          </Routes>
-        </Container>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/add-user" element={<AddUser />} />
+          <Route path="*" element={<AddUser />} />
+        </Routes>
 
         <Footer />
       </Router>
