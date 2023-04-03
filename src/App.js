@@ -19,9 +19,9 @@ function App() {
         <Header />
 
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/home" element={<Home />} />
+          <Route path="/" element={<AddUser />} />
           <Route path="/add-user" element={<AddUser />} />
+          <Route path="/products" element={<Home />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
 

@@ -8,7 +8,7 @@ const skeletonArr = new Array(12).fill("");
 const homeWrapper = {
   display: "grid",
   gridTemplateColumns: "1fr 1fr 1fr",
-  gap: 2,
+  gap: 3,
   p: 3,
   overflowY: "auto",
   maxHeight: "calc(100vh - 200px)",
@@ -18,14 +18,25 @@ const Home = () => {
   const [products, setProduct] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
+  // useEffect(() => {
+  //   fetch("https://dummyjson.com/products?limit=12")
+  //     .then((res) => {
+  //       setIsLoading(true);
+  //       return res.json();
+  //     })
+  //     .then((data) => {
+  //       setProduct(data.products);
+  //       setIsLoading(false);
+  //     });
+  // }, []);
   useEffect(() => {
-    fetch("https://dummyjson.com/products?limit=12")
+    fetch("https://fakestoreapi.com/products")
       .then((res) => {
         setIsLoading(true);
         return res.json();
       })
       .then((data) => {
-        setProduct(data.products);
+        setProduct(data);
         setIsLoading(false);
       });
   }, []);
@@ -48,7 +59,7 @@ const Home = () => {
       <ProductItem
         key={product.id}
         title={product.title}
-        image={product.images[0]}
+        image={product.image}
         description={product.description}
       />
     ));

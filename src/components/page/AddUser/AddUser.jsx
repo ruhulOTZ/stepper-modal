@@ -1,13 +1,11 @@
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-import React, { useEffect } from "react";
-
+import React, { useEffect, useState } from "react";
 import { Container, Stack, TextField } from "@mui/material";
-
 import AddUserModal from "./AddUserModal";
 import AddUserStepper from "./AddUserStepper";
-
 import bgImage from "../../../assets/profile_data.png";
+import Sidebar from "../../Sidebar";
 
 const steps = [
   "Basic Information",
@@ -17,8 +15,8 @@ const steps = [
 ];
 
 const AddUser = () => {
-  const [activeStep, setActiveStep] = React.useState(0);
-  const [openModal, setOpenModal] = React.useState(false);
+  const [activeStep, setActiveStep] = useState(0);
+  const [openModal, setOpenModal] = useState(false);
 
   const handleOpenModal = () => setOpenModal(true);
   const handleCloseModal = () => setOpenModal(false);
@@ -152,14 +150,18 @@ const AddUser = () => {
     }
   };
 
-  const addUserBg = {
+  const addUserWrapper = {
     backgroundImage: `url(${bgImage})`,
     backgroundRepeat: "no-repeat",
     backgroundPosition: "bottom right",
+
+    display: "grid",
+    gridTemplateColumns: "minmax(150px, 25%) 1fr",
   };
 
   return (
-    <Box sx={addUserBg}>
+    <Box sx={addUserWrapper}>
+      <Sidebar />
       <Container maxWidth="sm" sx={{ mt: 5 }}>
         <AddUserStepper activeStep={activeStep} steps={steps} />
 

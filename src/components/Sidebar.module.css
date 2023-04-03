@@ -1,0 +1,11 @@
+.sidebarWrapper{
+
+}
+
+.sidebarHeader{
+    color: white;
+    background-color: #F05454;
+    padding: 15px 20px 13px;
+    border-radius: 5px 5px 0 0;
+    -moz-border-radius: 5px 5px
+}
